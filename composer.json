@@ -1,5 +1,5 @@
 {
-    "name": "mmerian/doctrine-timestamp",
+    "name": "asiviero/doctrine-timestamp",
     "type": "library",
     "description": "A library adding the timestamp type to Doctrine ORM",
     "keywords": ["Doctrine", "ORM", "timestamp", "DateTime"],
@@ -8,7 +8,11 @@
         {
             "name": "Maxime Mérian",
             "email": "maxime.merian@gmail.com"
-        }
+        },
+	{
+	    "name":"André Siviero",
+	    "email":"altsiviero@gmail.com"
+	}
     ],
     "require" : {
         "doctrine/dbal": "2.*"
