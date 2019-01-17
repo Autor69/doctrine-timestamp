@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Definition of the timestamp type for Doctrine 2
  */
@@ -60,11 +61,27 @@ class Timestamp extends Type
      */
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
-	if(is_null($value)) {
-		return null;
-	}
+        if (is_null($value)) {
+            return null;
+        }
         $dt = new \DateTime();
         $dt->setTimestamp($value);
         return $dt;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getBindingType()
+    {
+        return \PDO::PARAM_INT;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function requiresSQLCommentHint(AbstractPlatform $platform)
+    {
+        return true;
     }
 }
